@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="DriverTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-09-24T14:10:27" hostname="DESKTOP-62HSL6N" time="25.963">
   <properties/>
   <testcase name="test" classname="DriverTest" time="25.963"/>
@@ -56,5 +57,40 @@ INFO: Detected dialect: W3C
 1506262251049	Marionette	INFO	New connections will no longer be accepted
 Sep 24, 2017 9:10:53 PM org.openqa.selenium.os.UnixProcess destroy
 SEVERE: Unable to kill process with PID 10724
+=======
+<testsuite name="DriverTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-09-24T14:11:21" hostname="DESKTOP-62HSL6N" time="12.169">
+  <properties/>
+  <testcase name="test" classname="DriverTest" time="12.169"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[1506262282485	geckodriver	INFO	geckodriver 0.18.0
+1506262282492	geckodriver	INFO	Listening on 127.0.0.1:31113
+1506262283275	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe with args ["-marionette"]
+1506262283475	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///C:/Program%20Files%20(x86)/Mozilla%20Firefox/omni.ja!/components/addonManager.js:65
+1506262283835	Marionette	INFO	Enabled via --marionette
+[GPU 12808] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 3384] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 3384] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1506262285153	Marionette	INFO	Listening on port 58761
+1506262285160	Marionette	INFO	Listening on port 58761
+1506262285289	Marionette	WARN	TLS certificate errors will be ignored for this session
+1506262285324	Marionette	DEBUG	loaded listener.js
+Sep 24, 2017 9:11:25 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+1506262285379	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1506262286159	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1506262286159	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1506262290208	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://techtalk.vn/"
+1506262290261	Marionette	DEBUG	Received DOM event "pageshow" for "https://techtalk.vn/"
+1506262290324	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://staticxx.facebook.com/connect/xd_arbiter/r/5oivrH7Newv.js?version=42#channel=f1dba01f6052392&origin=https%3A%2F%2Ftechtalk.vn"
+1506262290325	Marionette	DEBUG	Received DOM event "pageshow" for "https://staticxx.facebook.com/connect/xd_arbiter/r/5oivrH7Newv.js?version=42#channel=f1dba01f6052392&origin=https%3A%2F%2Ftechtalk.vn"
+JavaScript error: https://topdev.vn/challenge/network/topdevnetwork2.js, line 9: TypeError: document.getElementsByClassName(...)[0] is undefined
+1506262291011	Marionette	DEBUG	Received DOM event "pageshow" for "https://techtalk.vn/"
+1506262291030	Marionette	DEBUG	Received DOM event "pageshow" for "https://techtalk.vn/"
+1506262291043	Marionette	INFO	New connections will no longer be accepted
+[GPU 12808] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[GPU 12808] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Sep 24, 2017 9:11:33 PM org.openqa.selenium.os.UnixProcess destroy
+SEVERE: Unable to kill process with PID 16528
+>>>>>>> 355e05c98e41818c078d166c1e775b1005d7e3e1
 ]]></system-err>
 </testsuite>
