@@ -1,4 +1,4 @@
-package com.TAF.mydriver;
+package com.TAF.driver;
 
 public enum DriverType {
 	CHROME,

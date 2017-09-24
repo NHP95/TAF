@@ -26,5 +26,6 @@ dependencies {
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.4.0'
+    compile group: 'org.apache.poi', name: 'poi', version: '3.17'
 }
 
