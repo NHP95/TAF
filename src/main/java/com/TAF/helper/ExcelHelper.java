@@ -15,6 +15,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 public class ExcelHelper extends DataHelper{
 	XSSFWorkbook excelFile = null;
 	//Workbook excelFile = null;
+	//TO-DO check xls and xlsx
 	
 	public ExcelHelper (String path) {
 		super(path);
@@ -22,7 +23,7 @@ public class ExcelHelper extends DataHelper{
 			excelFile = new XSSFWorkbook(super.file);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			System.err.println("Cannot create excel file");
+			System.err.println("Cannot read excel file");
 		}
 	}
 		
