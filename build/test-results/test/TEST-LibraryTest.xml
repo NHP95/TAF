@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<testsuite name="LibraryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-09-24T14:10:53" hostname="DESKTOP-62HSL6N" time="0.001">
+<testsuite name="LibraryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-09-24T15:14:08" hostname="DESKTOP-62HSL6N" time="0.001">
   <properties/>
   <testcase name="testSomeLibraryMethod" classname="LibraryTest" time="0.001"/>
-=======
-<testsuite name="LibraryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-09-24T14:11:33" hostname="DESKTOP-62HSL6N" time="0.0">
-  <properties/>
-  <testcase name="testSomeLibraryMethod" classname="LibraryTest" time="0.0"/>
->>>>>>> 355e05c98e41818c078d166c1e775b1005d7e3e1
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

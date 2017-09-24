@@ -1,96 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<testsuite name="DriverTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-09-24T14:10:27" hostname="DESKTOP-62HSL6N" time="25.963">
+<testsuite name="DriverTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-09-24T15:13:52" hostname="DESKTOP-62HSL6N" time="15.833">
   <properties/>
-  <testcase name="test" classname="DriverTest" time="25.963"/>
+  <testcase name="test" classname="DriverTest" time="15.833"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[Starting ChromeDriver 2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a) on port 28669
-Only local connections are allowed.
-Sep 24, 2017 9:10:29 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: OSS
-Starting ChromeDriver 2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a) on port 33639
-Only local connections are allowed.
-Sep 24, 2017 9:10:34 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: OSS
-Starting ChromeDriver 2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a) on port 26602
-Only local connections are allowed.
-Sep 24, 2017 9:10:40 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: OSS
-1506262244058	geckodriver	INFO	geckodriver 0.18.0
-1506262244065	geckodriver	INFO	Listening on 127.0.0.1:40722
-1506262244625	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe with args ["-marionette"]
-1506262244838	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///C:/Program%20Files%20(x86)/Mozilla%20Firefox/omni.ja!/components/addonManager.js:65
-1506262245223	Marionette	INFO	Enabled via --marionette
-1506262246696	Marionette	INFO	Listening on port 58694
-1506262246702	Marionette	INFO	Listening on port 58694
-1506262247767	Marionette	DEBUG	loaded listener.js
-Sep 24, 2017 9:10:47 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+  <system-err><![CDATA[1506266034144	geckodriver	INFO	geckodriver 0.18.0
+1506266034170	geckodriver	INFO	Listening on 127.0.0.1:6677
+1506266034823	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe with args ["-marionette"]
+1506266035053	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///C:/Program%20Files%20(x86)/Mozilla%20Firefox/omni.ja!/components/addonManager.js:65
+1506266035499	Marionette	INFO	Enabled via --marionette
+[Child 7236] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 7236] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1506266037995	Marionette	INFO	Listening on port 60100
+1506266038012	Marionette	INFO	Listening on port 60100
+1506266038440	Marionette	WARN	TLS certificate errors will be ignored for this session
+1506266038482	Marionette	DEBUG	loaded listener.js
+Sep 24, 2017 10:13:58 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
-1506262247799	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
-1506262248571	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
-1506262248571	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
-1506262249459	Marionette	DEBUG	Received DOM event "pageshow" for "https://www.whatismybrowser.com/"
-1506262249508	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://www.whatismybrowser.com/"
-1506262249510	Marionette	DEBUG	Received DOM event "pageshow" for "https://www.whatismybrowser.com/"
-1506262249511	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://www.whatismybrowser.com/"
-1506262249513	Marionette	DEBUG	Received DOM event "pageshow" for "https://www.whatismybrowser.com/"
-1506262249641	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://www.whatismybrowser.com/"
-1506262249762	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://www.whatismybrowser.com/"
-1506262249803	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://googleads.g.doubleclick.net/pagead/html/r20170920/r20170110/zrt_lookup.html#"
-1506262249804	Marionette	DEBUG	Received DOM event "pageshow" for "https://googleads.g.doubleclick.net/pagead/html/r20170920/r20170110/zrt_lookup.html#"
-1506262250025	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://www.whatismybrowser.com/"
-1506262250046	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://www.whatismybrowser.com/"
-1506262250047	Marionette	DEBUG	Received DOM event "pageshow" for "https://www.whatismybrowser.com/"
-1506262250098	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://www.whatismybrowser.com/"
-1506262250395	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-8548565564007782&format=728x90&output=html&h=90&slotname=6712016822&adk=2627440633&adf=2822166624&w=728&lmt=1506262250&flash=0&url=https%3A%2F%2Fwww.whatismybrowser.com%2F&wgl=1&dt=1506262249466&bpp=2&bdt=896&fdt=558&idt=601&shv=r20170920&cbv=r20170110&saldr=aa&prev_fmts=336x280%2C160x600&correlator=8626856275831&frm=20&ga_vid=1650969541.1506262250&ga_sid=1506262250&ga_hid=1627369837&ga_fc=0&pv=1&icsg=2&nhd=1&dssz=2&mdo=0&mso=0&u_tz=420&u_his=1&u_java=0&u_h=1080&u_w=1920&u_ah=1040&u_aw=1920&u_cd=24&u_nplug=0&u_nmime=0&adx=262&ady=1526&biw=1251&bih=845&abxe=1&oid=3&rx=0&eae=0&fc=528&brdim=%2C%2C4%2C4%2C1920%2C0%2C1280%2C936%2C1268%2C845&vis=1&rsz=%7C%7CeEbr%7C&abl=CS&ppjl=t&pfx=0&fu=16&bc=1&ifi=3&xpc=hxKI29PkTw&p=https%3A//www.whatismybrowser.com&dtd=626"
-1506262250402	Marionette	DEBUG	Received DOM event "pageshow" for "https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-8548565564007782&format=728x90&output=html&h=90&slotname=6712016822&adk=2627440633&adf=2822166624&w=728&lmt=1506262250&flash=0&url=https%3A%2F%2Fwww.whatismybrowser.com%2F&wgl=1&dt=1506262249466&bpp=2&bdt=896&fdt=558&idt=601&shv=r20170920&cbv=r20170110&saldr=aa&prev_fmts=336x280%2C160x600&correlator=8626856275831&frm=20&ga_vid=1650969541.1506262250&ga_sid=1506262250&ga_hid=1627369837&ga_fc=0&pv=1&icsg=2&nhd=1&dssz=2&mdo=0&mso=0&u_tz=420&u_his=1&u_java=0&u_h=1080&u_w=1920&u_ah=1040&u_aw=1920&u_cd=24&u_nplug=0&u_nmime=0&adx=262&ady=1526&biw=1251&bih=845&abxe=1&oid=3&rx=0&eae=0&fc=528&brdim=%2C%2C4%2C4%2C1920%2C0%2C1280%2C936%2C1268%2C845&vis=1&rsz=%7C%7CeEbr%7C&abl=CS&ppjl=t&pfx=0&fu=16&bc=1&ifi=3&xpc=hxKI29PkTw&p=https%3A//www.whatismybrowser.com&dtd=626"
-1506262250478	Marionette	DEBUG	Received DOM event "pageshow" for "https://www.whatismybrowser.com/"
-1506262250810	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-8548565564007782&format=336x280&output=html&h=280&slotname=7182564424&adk=2072644264&adf=515683108&w=336&lmt=1506262249&flash=0&url=https%3A%2F%2Fwww.whatismybrowser.com%2F&wgl=1&dt=1506262249436&bpp=13&bdt=867&fdt=25&idt=281&shv=r20170920&cbv=r20170110&saldr=aa&correlator=8626856275831&frm=20&ga_vid=1650969541.1506262250&ga_sid=1506262250&ga_hid=1627369837&ga_fc=0&pv=2&icsg=2&nhd=1&dssz=2&mdo=0&mso=0&u_tz=420&u_his=1&u_java=0&u_h=1080&u_w=1920&u_ah=1040&u_aw=1920&u_cd=24&u_nplug=0&u_nmime=0&adx=770&ady=429&biw=1251&bih=845&abxe=1&oid=3&rx=0&eae=0&fc=528&brdim=%2C%2C4%2C4%2C1920%2C0%2C1280%2C936%2C1268%2C845&vis=1&rsz=%7C%7CeE%7C&abl=CS&ppjl=t&pfx=0&fu=16&bc=1&ifi=1&xpc=HoyV9XbmE7&p=https%3A//www.whatismybrowser.com&dtd=311"
-1506262250813	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-8548565564007782&format=160x600&output=html&h=600&slotname=2818370829&adk=1814397365&adf=2335989166&w=160&lmt=1506262249&flash=0&url=https%3A%2F%2Fwww.whatismybrowser.com%2F&wgl=1&dt=1506262249461&bpp=4&bdt=891&fdt=296&idt=351&shv=r20170920&cbv=r20170110&saldr=aa&prev_fmts=336x280&correlator=8626856275831&frm=20&ga_vid=1650969541.1506262250&ga_sid=1506262250&ga_hid=1627369837&ga_fc=0&pv=1&icsg=2&nhd=1&dssz=2&mdo=0&mso=0&u_tz=420&u_his=1&u_java=0&u_h=1080&u_w=1920&u_ah=1040&u_aw=1920&u_cd=24&u_nplug=0&u_nmime=0&adx=858&ady=818&biw=1251&bih=845&abxe=1&oid=3&rx=0&eae=0&fc=528&brdim=%2C%2C4%2C4%2C1920%2C0%2C1280%2C936%2C1268%2C845&vis=1&rsz=%7C%7CeE%7C&abl=CS&ppjl=t&pfx=0&fu=16&bc=1&ifi=2&xpc=YGPbr7B3s2&p=https%3A//www.whatismybrowser.com&dtd=551"
-1506262250989	Marionette	DEBUG	Received DOM event "pageshow" for "https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-8548565564007782&format=336x280&output=html&h=280&slotname=7182564424&adk=2072644264&adf=515683108&w=336&lmt=1506262249&flash=0&url=https%3A%2F%2Fwww.whatismybrowser.com%2F&wgl=1&dt=1506262249436&bpp=13&bdt=867&fdt=25&idt=281&shv=r20170920&cbv=r20170110&saldr=aa&correlator=8626856275831&frm=20&ga_vid=1650969541.1506262250&ga_sid=1506262250&ga_hid=1627369837&ga_fc=0&pv=2&icsg=2&nhd=1&dssz=2&mdo=0&mso=0&u_tz=420&u_his=1&u_java=0&u_h=1080&u_w=1920&u_ah=1040&u_aw=1920&u_cd=24&u_nplug=0&u_nmime=0&adx=770&ady=429&biw=1251&bih=845&abxe=1&oid=3&rx=0&eae=0&fc=528&brdim=%2C%2C4%2C4%2C1920%2C0%2C1280%2C936%2C1268%2C845&vis=1&rsz=%7C%7CeE%7C&abl=CS&ppjl=t&pfx=0&fu=16&bc=1&ifi=1&xpc=HoyV9XbmE7&p=https%3A//www.whatismybrowser.com&dtd=311"
-1506262250999	Marionette	DEBUG	Received DOM event "pageshow" for "https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-8548565564007782&format=336x280&output=html&h=280&slotname=7182564424&adk=2072644264&adf=515683108&w=336&lmt=1506262249&flash=0&url=https%3A%2F%2Fwww.whatismybrowser.com%2F&wgl=1&dt=1506262249436&bpp=13&bdt=867&fdt=25&idt=281&shv=r20170920&cbv=r20170110&saldr=aa&correlator=8626856275831&frm=20&ga_vid=1650969541.1506262250&ga_sid=1506262250&ga_hid=1627369837&ga_fc=0&pv=2&icsg=2&nhd=1&dssz=2&mdo=0&mso=0&u_tz=420&u_his=1&u_java=0&u_h=1080&u_w=1920&u_ah=1040&u_aw=1920&u_cd=24&u_nplug=0&u_nmime=0&adx=770&ady=429&biw=1251&bih=845&abxe=1&oid=3&rx=0&eae=0&fc=528&brdim=%2C%2C4%2C4%2C1920%2C0%2C1280%2C936%2C1268%2C845&vis=1&rsz=%7C%7CeE%7C&abl=CS&ppjl=t&pfx=0&fu=16&bc=1&ifi=1&xpc=HoyV9XbmE7&p=https%3A//www.whatismybrowser.com&dtd=311"
-1506262251000	Marionette	DEBUG	Received DOM event "pageshow" for "https://www.whatismybrowser.com/"
-1506262251015	Marionette	DEBUG	Received DOM event "pageshow" for "https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-8548565564007782&format=160x600&output=html&h=600&slotname=2818370829&adk=1814397365&adf=2335989166&w=160&lmt=1506262249&flash=0&url=https%3A%2F%2Fwww.whatismybrowser.com%2F&wgl=1&dt=1506262249461&bpp=4&bdt=891&fdt=296&idt=351&shv=r20170920&cbv=r20170110&saldr=aa&prev_fmts=336x280&correlator=8626856275831&frm=20&ga_vid=1650969541.1506262250&ga_sid=1506262250&ga_hid=1627369837&ga_fc=0&pv=1&icsg=2&nhd=1&dssz=2&mdo=0&mso=0&u_tz=420&u_his=1&u_java=0&u_h=1080&u_w=1920&u_ah=1040&u_aw=1920&u_cd=24&u_nplug=0&u_nmime=0&adx=858&ady=818&biw=1251&bih=845&abxe=1&oid=3&rx=0&eae=0&fc=528&brdim=%2C%2C4%2C4%2C1920%2C0%2C1280%2C936%2C1268%2C845&vis=1&rsz=%7C%7CeE%7C&abl=CS&ppjl=t&pfx=0&fu=16&bc=1&ifi=2&xpc=YGPbr7B3s2&p=https%3A//www.whatismybrowser.com&dtd=551"
-1506262251022	Marionette	DEBUG	Received DOM event "pageshow" for "https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-8548565564007782&format=160x600&output=html&h=600&slotname=2818370829&adk=1814397365&adf=2335989166&w=160&lmt=1506262249&flash=0&url=https%3A%2F%2Fwww.whatismybrowser.com%2F&wgl=1&dt=1506262249461&bpp=4&bdt=891&fdt=296&idt=351&shv=r20170920&cbv=r20170110&saldr=aa&prev_fmts=336x280&correlator=8626856275831&frm=20&ga_vid=1650969541.1506262250&ga_sid=1506262250&ga_hid=1627369837&ga_fc=0&pv=1&icsg=2&nhd=1&dssz=2&mdo=0&mso=0&u_tz=420&u_his=1&u_java=0&u_h=1080&u_w=1920&u_ah=1040&u_aw=1920&u_cd=24&u_nplug=0&u_nmime=0&adx=858&ady=818&biw=1251&bih=845&abxe=1&oid=3&rx=0&eae=0&fc=528&brdim=%2C%2C4%2C4%2C1920%2C0%2C1280%2C936%2C1268%2C845&vis=1&rsz=%7C%7CeE%7C&abl=CS&ppjl=t&pfx=0&fu=16&bc=1&ifi=2&xpc=YGPbr7B3s2&p=https%3A//www.whatismybrowser.com&dtd=551"
-1506262251024	Marionette	DEBUG	Received DOM event "pageshow" for "https://www.whatismybrowser.com/"
-1506262251028	Marionette	DEBUG	Received DOM event "pageshow" for "https://www.whatismybrowser.com/"
-1506262251049	Marionette	INFO	New connections will no longer be accepted
-Sep 24, 2017 9:10:53 PM org.openqa.selenium.os.UnixProcess destroy
-SEVERE: Unable to kill process with PID 10724
-=======
-<testsuite name="DriverTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-09-24T14:11:21" hostname="DESKTOP-62HSL6N" time="12.169">
-  <properties/>
-  <testcase name="test" classname="DriverTest" time="12.169"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[1506262282485	geckodriver	INFO	geckodriver 0.18.0
-1506262282492	geckodriver	INFO	Listening on 127.0.0.1:31113
-1506262283275	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe with args ["-marionette"]
-1506262283475	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///C:/Program%20Files%20(x86)/Mozilla%20Firefox/omni.ja!/components/addonManager.js:65
-1506262283835	Marionette	INFO	Enabled via --marionette
-[GPU 12808] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
-[Child 3384] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
-[Child 3384] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
-1506262285153	Marionette	INFO	Listening on port 58761
-1506262285160	Marionette	INFO	Listening on port 58761
-1506262285289	Marionette	WARN	TLS certificate errors will be ignored for this session
-1506262285324	Marionette	DEBUG	loaded listener.js
-Sep 24, 2017 9:11:25 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: W3C
-1506262285379	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
-1506262286159	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
-1506262286159	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
-1506262290208	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://techtalk.vn/"
-1506262290261	Marionette	DEBUG	Received DOM event "pageshow" for "https://techtalk.vn/"
-1506262290324	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://staticxx.facebook.com/connect/xd_arbiter/r/5oivrH7Newv.js?version=42#channel=f1dba01f6052392&origin=https%3A%2F%2Ftechtalk.vn"
-1506262290325	Marionette	DEBUG	Received DOM event "pageshow" for "https://staticxx.facebook.com/connect/xd_arbiter/r/5oivrH7Newv.js?version=42#channel=f1dba01f6052392&origin=https%3A%2F%2Ftechtalk.vn"
+1506266038568	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1506266039769	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1506266039771	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1506266044923	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://techtalk.vn/"
+1506266044990	Marionette	DEBUG	Received DOM event "pageshow" for "https://techtalk.vn/"
+1506266045064	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://staticxx.facebook.com/connect/xd_arbiter/r/5oivrH7Newv.js?version=42#channel=f24d7f54606c5c2&origin=https%3A%2F%2Ftechtalk.vn"
+1506266045066	Marionette	DEBUG	Received DOM event "pageshow" for "https://staticxx.facebook.com/connect/xd_arbiter/r/5oivrH7Newv.js?version=42#channel=f24d7f54606c5c2&origin=https%3A%2F%2Ftechtalk.vn"
 JavaScript error: https://topdev.vn/challenge/network/topdevnetwork2.js, line 9: TypeError: document.getElementsByClassName(...)[0] is undefined
-1506262291011	Marionette	DEBUG	Received DOM event "pageshow" for "https://techtalk.vn/"
-1506262291030	Marionette	DEBUG	Received DOM event "pageshow" for "https://techtalk.vn/"
-1506262291043	Marionette	INFO	New connections will no longer be accepted
-[GPU 12808] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
-[GPU 12808] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
-Sep 24, 2017 9:11:33 PM org.openqa.selenium.os.UnixProcess destroy
-SEVERE: Unable to kill process with PID 16528
->>>>>>> 355e05c98e41818c078d166c1e775b1005d7e3e1
+1506266045520	Marionette	DEBUG	Received DOM event "pageshow" for "https://techtalk.vn/"
+1506266045667	Marionette	DEBUG	Received DOM event "pageshow" for "https://techtalk.vn/"
+1506266045710	Marionette	INFO	New connections will no longer be accepted
+Sep 24, 2017 10:14:08 PM org.openqa.selenium.os.UnixProcess destroy
+SEVERE: Unable to kill process with PID 4564
 ]]></system-err>
 </testsuite>
