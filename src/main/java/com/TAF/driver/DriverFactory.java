@@ -16,25 +16,20 @@ public class DriverFactory {
 
 	public WebDriver createDriver(DriverType driverType) {
 		this.setSystemProperty();
+		DesiredCapabilities capabilities = new DesiredCapabilities();
 		switch (driverType) {
-		case CHROME:
-			driver = new ChromeDriver();
-			return driver;
+		case CHROME:			
+			return this.createDriver(DriverType.CHROME, capabilities);
 		case FIREFOX:
-			DesiredCapabilities capabilities = new DesiredCapabilities();
-			capabilities.setCapability("acceptInsecureCerts", true);
-			driver = this.createDriver(driverType.FIREFOX, capabilities);
-			return driver;
+			return this.createDriver(DriverType.FIREFOX, capabilities);
 		case CHROME_NEXUS5:
-			driver = new ChromeDriver(this.getDeviceCapabilities("Nexus 5"));
-			return driver;
+			return this.createDriver(DriverType.CHROME, this.getDeviceCapabilities("Nexus 5"));
 		case CHROME_IPAD:
-			driver = new ChromeDriver(this.getDeviceCapabilities("iPad"));
-			return driver;
+			return this.createDriver(DriverType.CHROME, this.getDeviceCapabilities("iPads"));
 		default:
-			driver = new ChromeDriver();
-			return driver;
+			return this.createDriver(DriverType.CHROME, capabilities);
 		}
+		
 	}
 	public WebDriver createDriver(DriverType driverType, DesiredCapabilities cap) {
 		this.setSystemProperty();
@@ -43,6 +38,7 @@ public class DriverFactory {
 			driver = new ChromeDriver(cap);
 			return driver;
 		case FIREFOX :
+			cap.setCapability("acceptInsecureCerts", true);
 			driver = new FirefoxDriver(cap);
 			return driver;
 		default :

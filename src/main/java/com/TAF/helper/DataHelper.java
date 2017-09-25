@@ -3,6 +3,8 @@ package com.TAF.helper;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
+import org.apache.commons.io.FilenameUtils;
+
 public class DataHelper {
 	protected String path = null;
 	protected FileInputStream file = null;
@@ -16,10 +18,7 @@ public class DataHelper {
 		}		
 	}
 	public String getFileExtension(String fileName) {
-		return null;
-	}
-	
-	public String getFileName() {
-		return null;
+		String extension = FilenameUtils.getExtension(path);
+		return extension;
 	}
 }
