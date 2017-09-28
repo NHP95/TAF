@@ -26,7 +26,6 @@ public class HomePage {
 
 	public String getWelcomeMessage() {
 		String temp = this.msg_Welcome.getText().trim();
-		System.out.println(temp);
 		return temp;
 	}
 

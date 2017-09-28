@@ -42,14 +42,13 @@ public class ExcelHelper extends DataHelper {
 
 	public List<List<String>> getSheet() {
 		List<List<String>> sheetData = new ArrayList<List<String>>();
-		Iterator<Row> rowIterator = sheet.iterator();
-
-		// Omit header
-		rowIterator.next();
-		while (rowIterator.hasNext()) {
-			Row row = rowIterator.next();
+		int rowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();
+		int colCount = sheet.getRow(0).getPhysicalNumberOfCells();
+		for (int i = 1; i <= rowCount; i++) {
 			List<String> cellData = new ArrayList<String>();
-			this.getDataInRow(row, cellData);
+			for (int j = 0; j < colCount; j++) {
+				cellData.add(this.celltostring(sheet.getRow(i).getCell(j)));
+			}
 			sheetData.add(cellData);
 		}
 		return sheetData;
@@ -57,8 +56,7 @@ public class ExcelHelper extends DataHelper {
 
 	public List<String> getRowData(int index) {
 		List<String> rowData = new ArrayList<String>();
-		Row row = sheet.getRow(index);
-		this.getDataInRow(row, rowData);
+		this.getDataInRow(rowData, index, sheet.getRow(index).getPhysicalNumberOfCells());
 		return rowData;
 	}
 
@@ -67,9 +65,7 @@ public class ExcelHelper extends DataHelper {
 		for (int i = 1; i <= sheet.getLastRowNum(); i++) {
 			Row row = sheet.getRow(i);
 			String temp = this.celltostring(row.getCell(index));
-			if (this.isBlank(temp)) {
-				colData.add(temp);
-			}
+			colData.add(temp);
 		}
 		return colData;
 	}
@@ -95,14 +91,9 @@ public class ExcelHelper extends DataHelper {
 		return cellValue;
 	}
 
-	private void getDataInRow(Row row, List<String> cellData) {
-		Iterator<Cell> cellIterator = row.cellIterator();
-		while (cellIterator.hasNext()) {
-			Cell cell = cellIterator.next();
-			String temp = this.celltostring(cell);
-			if (this.isBlank(temp)) {
-				cellData.add(temp);
-			}
+	private void getDataInRow(List<String> cellData, int index, int colCount) {
+		for (int j = 0; j < colCount; j++) {
+			cellData.add(this.celltostring(sheet.getRow(index).getCell(j)));
 		}
 	}
 
@@ -121,11 +112,11 @@ public class ExcelHelper extends DataHelper {
 		return (found) ? index : 0;
 	}
 
-	private boolean isBlank(String string) {
-		if (string != "") {
-			return true;
-		} else {
-			return false;
-		}
-	}
+//	private boolean isBlank(String string) {
+//		if (string != "") {
+//			return true;
+//		} else {
+//			return false;
+//		}
+//	}
 }
