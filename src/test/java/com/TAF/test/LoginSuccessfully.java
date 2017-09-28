@@ -22,7 +22,6 @@ import com.TAF.driver.DriverType;
 import com.TAF.helper.ExcelHelper;
 import com.TAF.page.HomePage;
 import com.TAF.page.LoginPage;
-import com.TAF.test.data.Message;
 import com.TAF.test.data.URL;
 
 @RunWith(Parameterized.class)
@@ -61,7 +60,7 @@ public class LoginSuccessfully {
 		
 		HomePage homePage = new HomePage(driver);
 		Assert.assertTrue(homePage.isOpened());
-		Assert.assertTrue(homePage.getWelcomeMessage().contains(Message.LOGIN_SUCCESS.toString() + this.username));
+		Assert.assertTrue(homePage.getWelcomeMessage().contains("Welcome, " + this.username));
 //		System.out.println(this.username + " " + this.password + " " + this.fullname);
 	}
 
