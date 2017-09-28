@@ -3,6 +3,8 @@ package com.TAF.test;
 import static org.junit.Assert.*;
 
 import java.io.File;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -38,9 +40,15 @@ public class LoginSuccessfully {
 	}
 	
 	@Parameters
-	public static Collection data() {		
-		return new ExcelHelper("credentials.xlsx", "Valid").getSheet();
-    }
+	public static List data() {		
+		return new ExcelHelper("credentials.xlsx", "Valid").getSheet();		
+  }
+	
+//	Column looping	
+//	@Parameters 
+//	public static Object data() {		
+//		return new ExcelHelper("credentials.xlsx", "Valid").getColumnData(0);		
+//    }
 
 	@Before
 	public void setUp() throws Exception {
@@ -54,6 +62,7 @@ public class LoginSuccessfully {
 
 	@Test
 	public void test() {
+		System.out.println(this.username);
 		driver.get(URL.LOGIN.toString());
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.login(this.username, this.password);
@@ -61,7 +70,7 @@ public class LoginSuccessfully {
 		HomePage homePage = new HomePage(driver);
 		Assert.assertTrue(homePage.isOpened());
 		Assert.assertTrue(homePage.getWelcomeMessage().contains("Welcome, " + this.username));
-//		System.out.println(this.username + " " + this.password + " " + this.fullname);
+		
 	}
 
 }
