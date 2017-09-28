@@ -2,21 +2,46 @@ package com.TAF.test;
 
 import static org.junit.Assert.*;
 
+import java.io.File;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameter;
+import org.junit.runners.Parameterized.Parameters;
 import org.openqa.selenium.WebDriver;
 
 import com.TAF.driver.DriverFactory;
 import com.TAF.driver.DriverType;
+import com.TAF.helper.ExcelHelper;
 import com.TAF.page.HomePage;
 import com.TAF.page.LoginPage;
 import com.TAF.test.data.Message;
 import com.TAF.test.data.URL;
 
+@RunWith(Parameterized.class)
 public class LoginSuccessfully {
 	WebDriver driver = null;
+	String username;
+	String password;
+	String fullname;	
+	
+	public LoginSuccessfully(String username, String password, String fullname) {
+		this.username = username;
+		this.password = password;
+		this.fullname = fullname;
+	}
+	
+	@Parameters
+	public static Collection data() {		
+		return new ExcelHelper("credentials.xlsx", "Valid").getSheet();
+    }
 
 	@Before
 	public void setUp() throws Exception {
@@ -32,11 +57,12 @@ public class LoginSuccessfully {
 	public void test() {
 		driver.get(URL.LOGIN.toString());
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.login("toanle", "kms");
+		loginPage.login(this.username, this.password);
 		
 		HomePage homePage = new HomePage(driver);
 		Assert.assertTrue(homePage.isOpened());
-		Assert.assertTrue(homePage.getWelcomeMessage().contains(Message.LOGIN_SUCCESS.toString() + "toanle"));
+		Assert.assertTrue(homePage.getWelcomeMessage().contains(Message.LOGIN_SUCCESS.toString() + this.username));
+//		System.out.println(this.username + " " + this.password + " " + this.fullname);
 	}
 
 }

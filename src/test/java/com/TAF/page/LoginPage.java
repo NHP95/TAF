@@ -5,11 +5,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.TAF.test.data.Title;
 
 public class LoginPage {
 	private WebDriver driver = null;
+	private WebDriverWait wait = null;
 	
 	@FindBy(tagName = "title")
 	private WebElement txt_Title;
@@ -31,6 +35,7 @@ public class LoginPage {
 	
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
+		this.wait = new WebDriverWait(driver, 2);
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -41,6 +46,7 @@ public class LoginPage {
 	}
 	
 	public String getEmptyTextMessage() {
+		wait.until(ExpectedConditions.visibilityOf(this.msg_Empty));
 		try {
 			String temp = this.msg_Empty.getText().trim();
 			return temp;
