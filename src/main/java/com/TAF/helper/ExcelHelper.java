@@ -48,77 +48,63 @@ public class ExcelHelper extends DataHelper {
 		for (int i = 1; i <= rowCount; i++) {
 			List cellData = new ArrayList();
 			for (int j = 0; j < colCount; j++) {
-				cellData.add(this.celltostring(sheet.getRow(i).getCell(j)));
+				cellData.add(this.getCellData(i, j));
 			}
 			sheetData.add(cellData.toArray());
 		}
 		return sheetData;
 	}
 
-	public Object getRow(int index) {
+	public List getRow(int index) {
+		List rowData = new ArrayList();
 		List cellData = new ArrayList();
 		for (int j = 0; j < sheet.getRow(0).getPhysicalNumberOfCells(); j++) {
 			cellData.add(this.getCellData(index, j));
 		}
-		return cellData.toArray();
+		rowData.add(cellData.toArray());
+		return rowData;
 	}
 
-	public Object getColumnData(int index) {
+	public Object getColumn(int index) {
 		List cellData = new ArrayList();
 		for (int i = 1; i <= sheet.getLastRowNum(); i++) {
 			cellData.add(this.getCellData(i, index));
 		}
 		return cellData.toArray();
 	}
-//
-//	public List<String> getColumnData(String header) {
-//		int index = this.getColumnIndex(header);
-//		return this.getColumnData(index);
-//	}
-//
+
+	public Object getColumn(String header) {
+		int index = this.getColumnIndex(header);
+		return this.getColumn(index);
+	}
+
 	public String getCellData(int rowIndex, int columnIndex) {
 		return this.celltostring(this.sheet.getRow(rowIndex).getCell(columnIndex));
 	}
-//
-//	public String getCellData(int rowIndex, String header) {
-//		int columnIndex = this.getColumnIndex(header);
-//		return this.getCellData(rowIndex, columnIndex);
-//	}
-//
+
+	public String getCellData(int rowIndex, String header) {
+		int columnIndex = this.getColumnIndex(header);
+		return this.getCellData(rowIndex, columnIndex);
+	}
+
 	private String celltostring(Cell cell) {
 		DataFormatter dataFormatter = new DataFormatter();
 		String cellValue = dataFormatter.formatCellValue(cell);
 		return cellValue;
 	}
 
-	private Object getDataInRow(int index, int colCount) {
-		List cellData = new ArrayList();
-		for (int j = 0; j < colCount; j++) {
-			cellData.add(this.celltostring(sheet.getRow(index).getCell(j)));
+	private int getColumnIndex(String header) {
+		Row row = sheet.getRow(0);
+		boolean found = false;
+		int index = 0;
+		Iterator<Cell> cellIterator = row.cellIterator();
+		while (cellIterator.hasNext()) {
+			Cell cell = cellIterator.next();
+			if (this.celltostring(cell).equals(header)) {
+				index = cell.getColumnIndex();
+				found = true;
+			}
 		}
-		return cellData.toArray();
+		return (found) ? index : 0;
 	}
-//
-//	private int getColumnIndex(String header) {
-//		Row row = sheet.getRow(0);
-//		boolean found = false;
-//		int index = 0;
-//		Iterator<Cell> cellIterator = row.cellIterator();
-//		while (cellIterator.hasNext()) {
-//			Cell cell = cellIterator.next();
-//			if (this.celltostring(cell).equals(header)) {
-//				index = cell.getColumnIndex();
-//				found = true;
-//			}
-//		}
-//		return (found) ? index : 0;
-//	}
-
-//	private boolean isBlank(String string) {
-//		if (string != "") {
-//			return true;
-//		} else {
-//			return false;
-//		}
-//	}
 }
