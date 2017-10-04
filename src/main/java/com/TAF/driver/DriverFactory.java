@@ -1,57 +1,40 @@
 package com.TAF.driver;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-public class DriverFactory {
-	private WebDriver driver = null;
-	private String osSeperator = File.separator;
-	private String driverPath = System.getProperty("user.dir") + osSeperator + "driver" + osSeperator;
-
-	public WebDriver createDriver(DriverType driverType) {
-		this.setSystemProperty();
-		DesiredCapabilities capabilities = new DesiredCapabilities();
-		switch (driverType) {
-		case CHROME:			
-			return this.createDriver(DriverType.CHROME, capabilities);
-		case FIREFOX:
-			return this.createDriver(DriverType.FIREFOX, capabilities);
-		case CHROME_NEXUS5:
-			return this.createDriver(DriverType.CHROME, this.getDeviceCapabilities("Nexus 5"));
-		case CHROME_IPAD:
-			return this.createDriver(DriverType.CHROME, this.getDeviceCapabilities("iPads"));
-		default:
-			return this.createDriver(DriverType.CHROME, capabilities);
-		}
-		
-	}
-	public WebDriver createDriver(DriverType driverType, DesiredCapabilities cap) {
-		this.setSystemProperty();
+public class DriverFactory {	
+	
+	public static WebDriver getDriver(DriverType driverType) {
 		switch (driverType) {
 		case CHROME :
-			driver = new ChromeDriver(cap);
-			return driver;
+			return new Chrome().createDriver();
 		case FIREFOX :
-			cap.setCapability("acceptInsecureCerts", true);
-			driver = new FirefoxDriver(cap);
-			return driver;
+			return new Firefox().createDriver();
+		case NEXUS5 :
+			return getDriver(DriverType.CHROME, getDeviceCapabilities("Nexus 5"));
+		case IPAD :
+			return getDriver(DriverType.CHROME, getDeviceCapabilities("iPad"));
 		default :
-			driver = new ChromeDriver(cap);
-			return driver;				
-		}			
+			return new Chrome().createDriver();	
+		}
 	}
-
-	private void setSystemProperty() {		
-		System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver.exe");
-		System.setProperty("webdriver.gecko.driver", driverPath + "geckodriver.exe");
+	
+	public static WebDriver getDriver(DriverType driverType, DesiredCapabilities capabilities) {
+		switch (driverType) {
+		case CHROME :
+			return new Chrome(capabilities).createDriver();
+		case FIREFOX :
+			return new Firefox(capabilities).createDriver();
+		default :
+			return new Chrome(capabilities).createDriver();	
+		}
 	}
-	private DesiredCapabilities getDeviceCapabilities(String deviceName) {
+	
+	private static DesiredCapabilities getDeviceCapabilities(String deviceName) {
 		Map<String, String> mobileEmulation = new HashMap<String, String>();
 		Map<String, Object> chromeOptions = new HashMap<String, Object>();
 		DesiredCapabilities Capabilities = DesiredCapabilities.chrome();

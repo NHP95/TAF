@@ -24,33 +24,7 @@ import com.TAF.test.data.URL;
 
 @RunWith(Enclosed.class)
 public class LoginUnsuccessfully {
-	
-//	String username;
-//	String password;
-//	String message;
-//
-//	@Before
-//	public void setUp() throws Exception {
-//		driver = new DriverFactory().createDriver(DriverType.CHROME);
-//	}
-//
-//	@After
-//	public void tearDown() throws Exception {
-//		driver.quit();
-//	}
-//
-//	@Test
-//	public void test1() {
-//		driver.get(URL.LOGIN.toString());
-//		LoginPage loginPage = new LoginPage(driver);
-//		loginPage.login(this.username, this.password);
-//	}
-//	
-//	@Test
-//	public void test2() {
-//		
-//	}
-	
+
 	@RunWith(Parameterized.class)
 	public static class Blank_Credentials {
 		WebDriver driver = null;
@@ -70,7 +44,7 @@ public class LoginUnsuccessfully {
 
 		@Before
 		public void setUp() throws Exception {
-			driver = new DriverFactory().createDriver(DriverType.CHROME);
+			driver =  DriverFactory.getDriver(DriverType.CHROME);
 		}
 
 		@After
@@ -108,7 +82,7 @@ public class LoginUnsuccessfully {
 
 		@Before
 		public void setUp() throws Exception {
-			driver = new DriverFactory().createDriver(DriverType.CHROME);
+			driver =  DriverFactory.getDriver(DriverType.CHROME);
 		}
 
 		@After
