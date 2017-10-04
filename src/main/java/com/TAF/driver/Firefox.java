@@ -4,12 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class Firefox extends Driver{	
+public class Firefox extends Browser{	
 	private WebDriver driver = null;
 	private DesiredCapabilities capabilities = null;
 	
 	Firefox() {
 		this.setFirefoxProperty();
+		this.capabilities = DesiredCapabilities.firefox();
 		this.capabilities.setCapability("acceptInsecureCerts", true);
 	}
 	
@@ -23,10 +24,7 @@ public class Firefox extends Driver{
 	public WebDriver createDriver() {
 		// TODO Auto-generated method stub
 		try {
-			if (this.capabilities != null)
-				driver = new FirefoxDriver(this.capabilities);
-			else
-				driver = new FirefoxDriver();
+			driver = new FirefoxDriver(this.capabilities);
 		}
 		catch (Exception e) {
 			System.err.println("Driver not found");
