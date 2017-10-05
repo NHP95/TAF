@@ -4,18 +4,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class Firefox extends DriverUtils{	
+public class Firefox implements DriverUtils{	
 	private WebDriver driver = null;
 	private DesiredCapabilities capabilities = null;
 	
 	Firefox() {
-		this.setFirefoxProperty();
+		this.setSystemProperty();
 		this.capabilities = DesiredCapabilities.firefox();
 		this.capabilities.setCapability("acceptInsecureCerts", true);
 	}
 	
 	Firefox(DesiredCapabilities capabilities) {
-		this.setFirefoxProperty();
+		this.setSystemProperty();
 		this.capabilities = capabilities;
 		this.capabilities.setCapability("acceptInsecureCerts", true);
 	}
@@ -32,7 +32,10 @@ public class Firefox extends DriverUtils{
 		return driver;
 	}
 	
-	private void setFirefoxProperty() {
-		super.setSystemProperty("webdriver.gecko.driver", "geckodriver.exe");
+
+	@Override
+	public void setSystemProperty() {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
 	}
 }
