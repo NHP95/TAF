@@ -1,90 +1,88 @@
 package com.TAF.helper;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.commons.io.FilenameUtils;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 
-public class ExcelHelper extends DataHelper {
+public class ExcelHelper implements DataHelper {
 	private Workbook excelFile = null;
 	private Sheet sheet = null;
+	private String fileExtension = null;
 
-	public ExcelHelper(String path, String sheetName) {
-		super(path);
-
-		if (this.getFileExtension(path).equals("xlsx")) {
+	public ExcelHelper(String fileName, String sheetName) {
+		String filePath = DataHelper.path + fileName;
+		fileExtension = FilenameUtils.getExtension(filePath);
+		if (this.fileExtension.equals("xlsx")) {
 			try {
-				excelFile = new XSSFWorkbook(super.file);
+				excelFile = new XSSFWorkbook(new FileInputStream(filePath));
 				sheet = excelFile.getSheet(sheetName);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				System.err.println("Cannot read excel file");
+				System.err.println("File not found");
 			}
 		} else {
 			try {
-				excelFile = new HSSFWorkbook(super.file);
+				excelFile = new HSSFWorkbook(new FileInputStream(filePath));
 				sheet = excelFile.getSheet(sheetName);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				System.err.println("Cannot read excel file");
+				System.err.println("File not found");
 			}
 		}
 	}
 
-	public List getSheet() {
-		List sheetData = new ArrayList();
+	@Override
+	public List<String[]> getSheetData() {
+		List<String[]> sheetData = new ArrayList<String[]>();
 		int rowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();
 		int colCount = sheet.getRow(0).getPhysicalNumberOfCells();
 		for (int i = 1; i <= rowCount; i++) {
-			List cellData = new ArrayList();
+			List<String> cellData = new ArrayList<String>();
 			for (int j = 0; j < colCount; j++) {
 				cellData.add(this.getCellData(i, j));
 			}
-			sheetData.add(cellData.toArray());
+			sheetData.add(cellData.toArray(new String[0]));
 		}
 		return sheetData;
 	}
 
-	public List getRow(int index) {
-		List rowData = new ArrayList();
-		List cellData = new ArrayList();
-		for (int j = 0; j < sheet.getRow(0).getPhysicalNumberOfCells(); j++) {
-			cellData.add(this.getCellData(index, j));
-		}
-		rowData.add(cellData.toArray());
-		return rowData;
+	@Override
+	public String getCellData(int rowIndex, int colIndex) {
+		// TODO Auto-generated method stub
+		return this.celltostring(this.sheet.getRow(rowIndex).getCell(colIndex));
 	}
 
-	public Object getColumn(int index) {
-		List cellData = new ArrayList();
+	@Override
+	public String getCellData(int rowIndex, String colHeader) {
+		// TODO Auto-generated method stub
+		return this.celltostring(this.sheet.getRow(rowIndex).getCell(this.getColumnIndex(colHeader)));
+	}
+
+	@Override
+	public String[] getColData(int colIndex) {
+		// TODO Auto-generated method stub
+		List<String> cellData = new ArrayList<String>();
 		for (int i = 1; i <= sheet.getLastRowNum(); i++) {
-			cellData.add(this.getCellData(i, index));
+			cellData.add(this.getCellData(i, colIndex));
 		}
-		return cellData.toArray();
+		return cellData.toArray(new String[0]);
 	}
 
-	public Object getColumn(String header) {
-		int index = this.getColumnIndex(header);
-		return this.getColumn(index);
-	}
-
-	public String getCellData(int rowIndex, int columnIndex) {
-		return this.celltostring(this.sheet.getRow(rowIndex).getCell(columnIndex));
-	}
-
-	public String getCellData(int rowIndex, String header) {
-		int columnIndex = this.getColumnIndex(header);
-		return this.getCellData(rowIndex, columnIndex);
+	@Override
+	public String[] getColData(String colHeader) {
+		// TODO Auto-generated method stub
+		return this.getColData(this.getColumnIndex(colHeader));
 	}
 
 	private String celltostring(Cell cell) {
@@ -107,4 +105,5 @@ public class ExcelHelper extends DataHelper {
 		}
 		return (found) ? index : 0;
 	}
+
 }

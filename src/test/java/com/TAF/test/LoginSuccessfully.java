@@ -1,6 +1,5 @@
 package com.TAF.test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.After;
@@ -35,9 +34,9 @@ public class LoginSuccessfully {
 	}
 	
 	@Parameters
-	public static List data() {	
+	public static List<String[]> data() {	
 		
-		return new ExcelHelper("credentials.xlsx", "Valid").getSheet();	
+		return new ExcelHelper("credentials.xlsx", "Valid").getSheetData();	
 		
 	}
 	

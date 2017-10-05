@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class Firefox extends Browser{	
+public class Firefox extends DriverUtils{	
 	private WebDriver driver = null;
 	private DesiredCapabilities capabilities = null;
 	

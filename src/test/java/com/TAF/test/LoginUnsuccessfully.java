@@ -39,7 +39,7 @@ public class LoginUnsuccessfully {
 		
 		@Parameters
 		public static Collection data() {		
-			return new ExcelHelper("credentials.xlsx", "Blank").getSheet();
+			return new ExcelHelper("credentials.xlsx", "Blank").getSheetData();
 	    }
 
 		@Before
@@ -77,7 +77,7 @@ public class LoginUnsuccessfully {
 		
 		@Parameters
 		public static Collection data() {		
-			return new ExcelHelper("credentials.xlsx", "Invalid").getSheet();
+			return new ExcelHelper("credentials.xlsx", "Invalid").getSheetData();
 	    }
 
 		@Before

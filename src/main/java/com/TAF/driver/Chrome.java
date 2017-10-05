@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class Chrome extends Browser{	
+public class Chrome extends DriverUtils{	
 	private WebDriver driver = null;
 	private DesiredCapabilities capabilities = null;
 	
