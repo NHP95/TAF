@@ -41,6 +41,11 @@ public class Chrome implements DriverUtils{
 		return driver;
 	}
 	
+	@Override
+	public WebDriver getDriver() {
+		return this.driver;
+	}
+	
 	private DesiredCapabilities getDeviceCapabilities(String deviceName) {
 		Map<String, String> mobileEmulation = new HashMap<String, String>();
 		Map<String, Object> chromeOptions = new HashMap<String, Object>();
@@ -55,6 +60,6 @@ public class Chrome implements DriverUtils{
 	@Override
 	public void setSystemProperty() {
 		// TODO Auto-generated method stub
-		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", Path + "chromedriver.exe");
 	}
 }

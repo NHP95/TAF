@@ -36,6 +36,12 @@ public class Firefox implements DriverUtils{
 	@Override
 	public void setSystemProperty() {
 		// TODO Auto-generated method stub
-		System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver",  Path + "geckodriver.exe");
+	}
+
+	@Override
+	public WebDriver getDriver() {
+		// TODO Auto-generated method stub
+		return this.driver;
 	}
 }

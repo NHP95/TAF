@@ -3,30 +3,43 @@ package com.TAF.driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 public class DriverFactory {
+	private static WebDriver driver = null;
 	
 	public static WebDriver getDriver(DriverType driverType) {
 		switch (driverType) {
 		case CHROME :
-			return new Chrome().createDriver();
+			driver = new Chrome().createDriver();
+			return driver;
 		case FIREFOX :
-			return new Firefox().createDriver();
+			driver = new Firefox().createDriver();
+			return driver;
 		case NEXUS5 :
-			return new Chrome("Nexus 5").createDriver();
+			driver = new Chrome("Nexus 5").createDriver();
+			return driver;
 		case IPAD :
-			return new Chrome("iPad").createDriver();
+			driver = new Chrome("iPad").createDriver();
+			return driver;
 		default :
-			return new Chrome().createDriver();	
+			driver = new Chrome().createDriver();
+			return driver;	
 		}
 	}
 	
 	public static WebDriver getDriver(DriverType driverType, DesiredCapabilities capabilities) {
 		switch (driverType) {
 		case CHROME :
-			return new Chrome(capabilities).createDriver();
+			driver = new Chrome(capabilities).createDriver();
+			return driver;
 		case FIREFOX :
-			return new Firefox(capabilities).createDriver();
+			driver = new Firefox(capabilities).createDriver();
+			return driver;
 		default :
-			return new Chrome(capabilities).createDriver();	
+			driver = new Chrome(capabilities).createDriver();
+			return driver;
 		}
-	}	
+	}
+	
+	public static void terminateDriver() {
+		driver.quit();
+	}
 }

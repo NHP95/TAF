@@ -9,4 +9,5 @@ interface DriverUtils {
 	
 	void setSystemProperty();	
 	WebDriver createDriver();
+	WebDriver getDriver();
 }
