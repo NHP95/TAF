@@ -3,6 +3,7 @@ package com.saleor.page.home;
 import java.util.Collections;
 import java.util.List;
 
+import com.saleor.properties.Constants;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -34,4 +35,10 @@ public class HomePageValidation extends HomePage{
 			Assert.assertTrue(isClickable(headers.get(i), driver));
 		}
 	}
+
+	public void validateCartIsEmpty() {
+		Assert.assertEquals(0, getNumberOfProductsInCart());
+		Assert.assertEquals(getMessageOfEmptyCard(), Constants.MSG_EMPTY_CART.toLowerCase());
+	}
+
 }

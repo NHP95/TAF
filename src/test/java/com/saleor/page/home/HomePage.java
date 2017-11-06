@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.interactions.Actions;
 
 import com.TAF.test.data.Title;
 
@@ -17,11 +20,19 @@ public class HomePage {
 	protected WebDriver driver = null;
 
 	@FindBy(xpath = "//*[contains(' navigation ', concat(' ',@class,' '))]//li[contains(' nav-item ', concat(' ',@class,' '))]")
-	private List<WebElement> navigationBar;
+	protected List<WebElement> navigationBar;
+
+	@FindBy(css = ".cart__icon")
+	protected WebElement cart;
 
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+	}
+
+	public void hoverOverElement(WebElement element, WebDriver driver) {
+		Actions actions = new Actions(driver);
+		actions.moveToElement(element).perform();
 	}
 
 	public boolean isOpened() {
@@ -64,4 +75,16 @@ public class HomePage {
 		return contents;
 	}
 
+	public int getNumberOfProductsInCart() {
+		String numberOfProducts = cart.findElement(By.xpath(".//*[contains(concat(' ',@class,' '),' badge ')]")).getText().toString().trim();
+		return Integer.parseInt(numberOfProducts);
+	}
+
+
+
+	public String getMessageOfEmptyCard() {
+		hoverOverElement(cart, driver);
+		String msg = cart.findElement(By.xpath("//*[normalize-space(.) = 'There are no products in your shopping cart.']")).getText().trim();
+		return msg.toLowerCase();
+	}
 }
