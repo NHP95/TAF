@@ -80,8 +80,6 @@ public class HomePage {
 		return Integer.parseInt(numberOfProducts);
 	}
 
-
-
 	public String getMessageOfEmptyCard() {
 		hoverOverElement(cart, driver);
 		String msg = cart.findElement(By.xpath("//*[normalize-space(.) = 'There are no products in your shopping cart.']")).getText().trim();
